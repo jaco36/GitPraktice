@@ -1,0 +1,76 @@
+using System;
+using System.IO;
+using System.Text;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main()
+        {
+            //try
+            //{   // Open the text file using a stream reader.
+            //    using (StreamReader sr = new StreamReader("test.txt"))
+            //    {
+            //        // Read the stream to a string, and write the string to the console.
+            //        String line = sr.ReadToEnd();
+            //        Console.WriteLine(line);
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("The file could not be read:");
+            //    Console.WriteLine(e.Message);
+            //}
+
+            string line = "";
+            string file = "test.txt";
+            List<string> list = new List<string>();
+
+            StreamReader myFile = new StreamReader(file);
+
+            while (myFile.EndOfStream == false) {
+
+
+               line = myFile.ReadLine();
+                //    list.Add(line);
+                //    //Console.WriteLine(list);
+                //    Console.WriteLine(list);
+                //    Console.ReadLine();
+
+
+                //List<int> list = new List<int>();
+
+
+                if (line.Length < 12 && line.Length > 6)
+                {
+                    list.Add(line);
+                }
+
+
+
+            //    // Loop through List with foreach.
+            //    foreach (string prime in list)
+            //    {
+            //        System.Console.WriteLine(prime);
+            //    }
+
+
+            }
+
+           //s Loop through List with foreach.
+            foreach (string prime in list)
+                {
+                    System.Console.WriteLine(prime);
+                }
+
+            Console.WriteLine(list[1]);
+
+            Console.ReadLine();
+            myFile.Close();
+
+        
+        }
+    }
+}
